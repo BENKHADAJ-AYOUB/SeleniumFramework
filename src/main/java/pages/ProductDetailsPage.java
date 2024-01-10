@@ -12,6 +12,7 @@ public class ProductDetailsPage extends PageBase{
     @FindBy(linkText = "Apple MacBook Pro 13-inch")
     WebElement productTitleLinkElement;
     //public By productTitle = By.xpath("//*[text()='Apple MacBook Pro 13-inch']");
+    //tag H1
     @FindBy(tagName = "h1")
     public WebElement productTitleElement;
 
