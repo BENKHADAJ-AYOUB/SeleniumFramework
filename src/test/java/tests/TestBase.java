@@ -9,8 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utilities.Helper;
-import org.openqa.selenium.remote.CapabilityType;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +23,8 @@ public class TestBase extends AbstractTestNGCucumberTests {
         chromePrefs.put("profile.default.content_settings.popups", 0);
         chromePrefs.put("download.default_directory", downloadPath);
         options.setExperimentalOption("prefs", chromePrefs);
-        options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+
+        //options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
         return options;
     }
 
@@ -43,6 +42,12 @@ public class TestBase extends AbstractTestNGCucumberTests {
                 break;
             case "edge":
                 driver = new EdgeDriver();
+                break;
+            case "headless-chrome":
+                System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--headless");
+                driver = new ChromeDriver(options);
                 break;
         }
         driver.manage().window().maximize();
