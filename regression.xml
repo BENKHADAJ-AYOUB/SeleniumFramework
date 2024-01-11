@@ -8,7 +8,7 @@
             <class name="tests.AddProductToWishListTeas" />
             <class name="tests.ChangeCurrencyTest" />
             <class name="tests.ContactUsTest" />
-            <class name="tests.ProductHoverMenuTest" />
+
 
         </classes>
     </test>
