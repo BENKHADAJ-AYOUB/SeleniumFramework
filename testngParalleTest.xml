@@ -4,21 +4,25 @@
 
     <test name="Chrome1 Regression Test" >
         <parameter name="browser" value="chrome"></parameter>
+        <parameter name="nodeUrl" value="http://localhost:4444"></parameter> <!-- Spécifiez l'URL du nœud ici -->
         <classes>
             <class name="tests.SearchPTTest" />
         </classes>
     </test>
-    <test name="edge Regression Test" >
+    <test name="edge1 Regression Test" >
         <parameter name="browser" value="MicrosoftEdge"></parameter>
+        <parameter name="nodeUrl" value="http://localhost:4444"></parameter> <!-- Spécifiez l'URL du nœud ici -->
         <classes>
             <class name="tests.SearchPTTest" />
         </classes>
     </test>
-    <test name="chrome2 Regression Test" >
-        <parameter name="browser" value="chrome"></parameter>
+    <test name="edge2 Regression Test" >
+        <parameter name="browser" value="MicrosoftEdge"></parameter>
+        <parameter name="nodeUrl" value="http://localhost:4444"></parameter> <!-- Spécifiez l'URL du nœud ici -->
         <classes>
-            <class name="tests.ChangeCurrencyPTTest" />
+            <class name="tests.SearchPTTest" />
         </classes>
     </test>
+
 
 </suite>

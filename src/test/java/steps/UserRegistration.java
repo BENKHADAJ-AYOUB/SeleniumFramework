@@ -24,20 +24,26 @@ public class UserRegistration extends TestBase {
     public void i_click_on_register_link() {
         Assert.assertTrue(driver.getCurrentUrl().contains("register"));
     }
-   /* @When("I entered the bdd")
-    public void i_entered_the_bdd() {
+    /* @When("I entered the bdd")
+     public void i_entered_the_bdd() {
+         userRegistrationPage = new UserRegistrationPage(driver);
+         userRegistrationPage.UserRegistration("tchach","lflash","tchach@gmail.com","123456789","123456789");
+     }*/
+    @When("I entered for register {string} , {string} , {string} , {string}")
+    public void i_entered_for_register(String firstname , String lastname, String email, String password) {
         userRegistrationPage = new UserRegistrationPage(driver);
-        userRegistrationPage.UserRegistration("tchach","lflash","tchach@gmail.com","123456789","123456789");
-    }*/
-   @When("I entered {string} , {string} , {string} , {string}")
-   public void i_entered(String firstname , String lastname, String email, String password) {
-       userRegistrationPage = new UserRegistrationPage(driver);
-       userRegistrationPage.UserRegistration(firstname,lastname,email,password,password);
-   }
+        userRegistrationPage.UserRegistration(firstname,lastname,email,password,password);
+    }
+    @When("I entered for login {string} , {string}")
+    public void i_entered_for_login(String email, String password) {
+        homePage.clickOnButtonLogin();
+        loginPage = new LoginPage(driver);
+        loginPage.Userlogin(email,password);
+    }
     @Then("The registration page displayed successfully")
     public void the_registration_page_displayed_successfully() {
-    homePage.clickOnButtonLogin();
-    loginPage = new LoginPage(driver);
-    loginPage.Userlogin("tchach@gmail.com","123456789");
+        Assert.assertTrue(userRegistrationPage.logOutElement.getText().contains("Log out"));
+        userRegistrationPage.logOut();
+
     }
 }

@@ -20,15 +20,15 @@ public class TestBase2 {
    /* En utilisant ThreadLocal<RemoteWebDriver>, vous vous assurez que chaque thread exécutant un test a sa propre instance de RemoteWebDriver, isolée des autres. Cela est crucial pour l'exécution de tests en parallèle
     car cela évite les interférences et les conditions de course entre les threads.*/
     @BeforeClass
-    @Parameters(value = {"browser"})
-    public void setUp(@Optional("chrome") String browser) throws MalformedURLException {
+    @Parameters(value = {"browser", "nodeUrl"})
+    public void setUp(@Optional("chrome") String browser,@Optional("http://localhost:4444") String nodeUrl) throws MalformedURLException {
         driver = new ThreadLocal<>();
         //DesiredCapabilities est utilisé pour définir les propriétés du navigateur désiré.
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browserName",browser);
         //new RemoteWebDriver(new URL("http://localhost:4444"), caps) crée une instance
         // de RemoteWebDriver pour interagir avec Selenium Grid.
-        driver.set(new RemoteWebDriver(new URL("http://localhost:4444"),caps));
+        driver.set(new RemoteWebDriver(new URL(nodeUrl),caps));
         getDriver().manage().window().maximize();
         getDriver().manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
         getDriver().navigate().to(baseUrl);

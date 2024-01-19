@@ -41,7 +41,7 @@ public class HomePage extends PageBase {
 
     //By loginButton = By.linkText("Log in");
     @FindBy(linkText = "Log in")
-    WebElement loginButtonElement;
+    public WebElement loginButtonElement;
 
 
     public void clickOnButtonLogin() {

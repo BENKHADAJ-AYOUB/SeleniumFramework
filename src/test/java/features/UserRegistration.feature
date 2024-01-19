@@ -1,13 +1,18 @@
-Feature: User Registration
-  I want to check that the user can register in our e-commerce website.
+Feature: User Registration   I want to check that the user can register in our e-commerce website.
 
-  Scenario Outline: User Registration
+  Background:
+
+
+  @PGR4-133
+  Scenario Outline: User Registration   I want to check that the user can register in our e-commerce website.
     Given the user in the home page
     When I click on register link
-    And I entered "<firstname>" , "<lastname>" , "<email>" , "<password>"
+    And I entered for register "<firstname>" , "<lastname>" , "<email>" , "<password>"
+    And I entered for login "<email>" , "<password>"
     Then The registration page displayed successfully
 
+
     Examples:
-      | firstname | lastname | email | password |
-      | ahmed | mohamed | ahmed@user434.com | 12345678 |
-      | Moataz | ahmed | test@newuser233.com | 87654321 |
+      | firstname | lastname | email                     | password |
+      | ahmed     | mohamed  | skjsjlkfedsmd@user434.com | 12345678 |
+
