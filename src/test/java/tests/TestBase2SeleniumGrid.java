@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class TestBase2 {
+public class TestBase2SeleniumGrid {
     public static String baseUrl="https://demo.nopcommerce.com/";
     //RemoteWebDriverpr acceder au gride
     //ThreadLocal ça permet d'ouvrir plusieurs thread

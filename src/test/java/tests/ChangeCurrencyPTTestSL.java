@@ -6,7 +6,7 @@ import pages.HomePage;
 import pages.ProductDetailsPage;
 import pages.SearchPage;
 
-public class ChangeCurrencyPTTest extends TestBase2{
+public class ChangeCurrencyPTTestSL extends TestBase3SauceLabs{
 
     HomePage homePage;
     ProductDetailsPage productDetailsPage;

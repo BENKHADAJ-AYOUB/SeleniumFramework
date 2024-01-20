@@ -6,21 +6,21 @@
         <parameter name="browser" value="chrome"></parameter>
         <parameter name="nodeUrl" value="http://localhost:4444"></parameter> <!-- Spécifiez l'URL du nœud ici -->
         <classes>
-            <class name="tests.SearchPTTest" />
+            <class name="tests.SearchPTTestSG" />
         </classes>
     </test>
     <test name="edge1 Regression Test" >
         <parameter name="browser" value="MicrosoftEdge"></parameter>
         <parameter name="nodeUrl" value="http://localhost:4444"></parameter> <!-- Spécifiez l'URL du nœud ici -->
         <classes>
-            <class name="tests.SearchPTTest" />
+            <class name="tests.SearchPTTestSG" />
         </classes>
     </test>
     <test name="edge2 Regression Test" >
         <parameter name="browser" value="MicrosoftEdge"></parameter>
         <parameter name="nodeUrl" value="http://localhost:4444"></parameter> <!-- Spécifiez l'URL du nœud ici -->
         <classes>
-            <class name="tests.SearchPTTest" />
+            <class name="tests.SearchPTTestSG" />
         </classes>
     </test>
 

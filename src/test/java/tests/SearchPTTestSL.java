@@ -1,11 +1,11 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.ProductDetailsPage;
+import pages.SearchPage;
 
-public class SearchPTTest extends TestBase2{
+public class SearchPTTestSL extends TestBase3SauceLabs{
     SearchPage searchPage;
     ProductDetailsPage productDetailsPage;
     String productName ="Apple MacBook Pro 13-inch";
