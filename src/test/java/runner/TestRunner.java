@@ -1,13 +1,8 @@
 package runner;
 
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.AfterClass;
-import tests.TestBase;
 
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
+import tests.TestBase;
 
 
 @CucumberOptions(
@@ -16,14 +11,6 @@ import java.security.NoSuchAlgorithmException;
         glue = {"steps"}
 )
 public class TestRunner extends TestBase {
-    ImportToXray importToXray;
-    @AfterClass
-    public void testXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
-        importToXray = new ImportToXray();
-        importToXray.importConfigJson();
 
-
-    }
 
 }
-

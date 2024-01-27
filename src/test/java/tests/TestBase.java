@@ -6,10 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utilities.Helper;
 import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -23,8 +27,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
         chromePrefs.put("profile.default.content_settings.popups", 0);
         chromePrefs.put("download.default_directory", downloadPath);
         options.setExperimentalOption("prefs", chromePrefs);
-
-        //options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
+        options.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
         return options;
     }
 
@@ -57,7 +60,8 @@ public class TestBase extends AbstractTestNGCucumberTests {
     }
 
     @AfterSuite
-    public void stopDriver() {
+    public void stopDriver() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
+
         driver.quit();
     }
 

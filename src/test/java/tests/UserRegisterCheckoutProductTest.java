@@ -13,7 +13,7 @@ public class UserRegisterCheckoutProductTest extends TestBase{
     CheckoutPage checkoutPage;
     String fName = "ayoub";
     String lName = "l3des";
-    String email = "ssa18ezdd10@gmail.com";
+    String email = "c1@gmail.com";
     String oldPassword = "123456789";
     String newPassword = "1234567890";
     UserRegistrationPage userRegistrationPage;
@@ -81,13 +81,13 @@ public class UserRegisterCheckoutProductTest extends TestBase{
     }
 
     @Test(priority = 7)
-    public void userCanPrintOrder()
-    {
+    public void userCanPrintOrder() throws InterruptedException {
 
         checkoutPage.goToprintOrder();
         orderDetailsPage = new OrderDetailsPage(driver);
         orderDetailsPage.printOrder();
         orderDetailsPage.pdfInvoiceOrder();
+        Thread.sleep(5000);
     }
 
 

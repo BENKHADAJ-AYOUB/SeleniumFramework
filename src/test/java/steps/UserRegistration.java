@@ -1,5 +1,6 @@
 package steps;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,6 +15,11 @@ public class UserRegistration extends TestBase {
     HomePage homePage;
     UserRegistrationPage userRegistrationPage;
     LoginPage loginPage;
+    Faker fakeData = new Faker();
+    String firstName = fakeData.name().firstName();
+    String lastName = fakeData.name().lastName();
+    String mail = fakeData.internet().emailAddress();
+    String password= fakeData.number().digits(9).toString();
     @Given("the user in the home page")
     public void the_user_in_the_home_page() {
         homePage = new HomePage(driver);
@@ -29,16 +35,16 @@ public class UserRegistration extends TestBase {
          userRegistrationPage = new UserRegistrationPage(driver);
          userRegistrationPage.UserRegistration("tchach","lflash","tchach@gmail.com","123456789","123456789");
      }*/
-    @When("I entered for register {string} , {string} , {string} , {string}")
-    public void i_entered_for_register(String firstname , String lastname, String email, String password) {
+    @When("I entered for register")
+    public void i_entered_for_register() {
         userRegistrationPage = new UserRegistrationPage(driver);
-        userRegistrationPage.UserRegistration(firstname,lastname,email,password,password);
+        userRegistrationPage.UserRegistration(firstName,lastName,mail,password,password);
     }
-    @When("I entered for login {string} , {string}")
-    public void i_entered_for_login(String email, String password) {
+    @When("I entered for login")
+    public void i_entered_for_login() {
         homePage.clickOnButtonLogin();
         loginPage = new LoginPage(driver);
-        loginPage.Userlogin(email,password);
+        loginPage.Userlogin(mail,password);
     }
     @Then("The registration page displayed successfully")
     public void the_registration_page_displayed_successfully() {
