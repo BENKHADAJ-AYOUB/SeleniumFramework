@@ -1,4 +1,4 @@
-package steps;
+package steps.registration;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
