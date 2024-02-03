@@ -62,7 +62,7 @@ public class UserRegistrationPage extends PageBase{
     }
     public void logOut()
     {
-        //new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.result")));
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.result")));
         Clicking(logOutElement);
 
 

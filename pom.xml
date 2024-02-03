@@ -139,7 +139,7 @@
                 </property>
             </activation>
             <properties>
-                <testNGSuite>testng.xml</testNGSuite>
+                <testNGSuite>testngParalleTestSG.xml</testNGSuite>
             </properties>
         </profile>
     </profiles>
